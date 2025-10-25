@@ -1,0 +1,149 @@
+{
+  "Bacterial Leaf Streak": {
+    "fertilizer": "Avoid excess nitrogen; apply balanced NPK",
+    "water": "Maintain optimum moisture; avoid water stagnation",
+    "medicine": ["Copper oxychloride", "Streptocycline spray"],
+    "organic_medicine": ["Neem oil", "Garlic-chili extract"],
+    "prevention": "Use disease-free seeds and maintain field hygiene."
+  },
+  "Bakanae disease": {
+    "fertilizer": "Balanced nitrogen management",
+    "water": "Keep fields well-drained during early growth",
+    "medicine": ["Carbendazim seed treatment", "Thiram seed dressing"],
+    "organic_medicine": ["Trichoderma for seed treatment"],
+    "prevention": "Use treated seeds and avoid reuse of contaminated soil."
+  },
+  "Blast": {
+    "fertilizer": "Avoid high nitrogen at once; split application",
+    "water": "Maintain shallow water during vegetative growth",
+    "medicine": ["Tricyclazole", "Isoprothiolane"],
+    "organic_medicine": ["Pseudomonas fluorescens spray"],
+    "prevention": "Use resistant varieties and avoid dense planting."
+  },
+  "brown plant leafhoppers": {
+    "fertilizer": "Avoid excess nitrogen; use potash",
+    "water": "Avoid continuous flooding",
+    "medicine": ["Imidacloprid", "Buprofezin"],
+    "organic_medicine": ["Neem oil 5%", "Fish oil rosin soap"],
+    "prevention": "Maintain field sanitation and remove weeds."
+  },
+  "brown spot": {
+    "fertilizer": "Apply potash and balanced NPK",
+    "water": "Maintain standing water during infection period",
+    "medicine": ["Mancozeb", "Carbendazim"],
+    "organic_medicine": ["Neem seed kernel extract"],
+    "prevention": "Use clean seeds and maintain soil fertility."
+  },
+  "False smut": {
+    "fertilizer": "Avoid late nitrogen application",
+    "water": "Maintain proper drainage at flowering stage",
+    "medicine": ["Propiconazole spray at booting stage"],
+    "organic_medicine": ["Neem decoction"],
+    "prevention": "Use resistant varieties and rotate crops."
+  },
+  "Gall midge": {
+    "fertilizer": "Balanced nitrogen usage",
+    "water": "Drain fields intermittently",
+    "medicine": ["Chlorpyrifos", "Fipronil"],
+    "organic_medicine": ["Neem oil spray"],
+    "prevention": "Use resistant varieties and avoid early sowing."
+  },
+  "Grain discolouration": {
+    "fertilizer": "Balanced NPK with zinc",
+    "water": "Avoid late irrigation",
+    "medicine": ["Carbendazim", "Mancozeb"],
+    "organic_medicine": ["Panchagavya spray"],
+    "prevention": "Harvest at correct time and dry grains properly."
+  },
+  "grass hopper": {
+    "fertilizer": "Balanced nutrients",
+    "water": "No water-specific need",
+    "medicine": ["Malathion", "Chlorpyrifos"],
+    "organic_medicine": ["Neem oil", "Custard apple leaf extract"],
+    "prevention": "Remove alternate host plants and weeds."
+  },
+  "Green horned caterpillar": {
+    "fertilizer": "No change required",
+    "water": "Maintain normal field water level",
+    "medicine": ["Lambda-cyhalothrin", "Emamectin benzoate"],
+    "organic_medicine": ["Bacillus thuringiensis (Bt)"],
+    "prevention": "Manual removal in early stage reduces damage."
+  },
+  "Green leafhopper": {
+    "fertilizer": "Avoid excess nitrogen",
+    "water": "Intermittent irrigation",
+    "medicine": ["Imidacloprid", "Buprofezin"],
+    "organic_medicine": ["Neem oil 3%"],
+    "prevention": "Use resistant cultivars and remove grassy weeds."
+  },
+  "Healthy": {
+    "fertilizer": "Maintain balanced nutrients",
+    "water": "Normal cultivation water level",
+    "medicine": ["No treatment needed"],
+    "organic_medicine": ["Vermicompost", "Neem cake"],
+    "prevention": "Continue routine crop monitoring."
+  },
+  "Leaf folder (or) leaf roller": {
+    "fertilizer": "Balanced NPK",
+    "water": "Maintain optimum moisture",
+    "medicine": ["Chlorantraniliprole", "Flubendiamide"],
+    "organic_medicine": ["Bacillus thuringiensis"],
+    "prevention": "Clip and destroy rolled leaves early."
+  },
+  "leaf_scald": {
+    "fertilizer": "Improve potassium supply",
+    "water": "Avoid water stagnation",
+    "medicine": ["Tricyclazole", "Mancozeb"],
+    "organic_medicine": ["Neem oil"],
+    "prevention": "Use clean seed and rotate crops."
+  },
+  "Mealybug": {
+    "fertilizer": "Avoid excess nitrogen",
+    "water": "Maintain regular irrigation",
+    "medicine": ["Chlorpyrifos", "Imidacloprid"],
+    "organic_medicine": ["Soap water + Neem oil"],
+    "prevention": "Remove infected tillers early."
+  },
+  "narrow_brown_spot": {
+    "fertilizer": "Increase potassium",
+    "water": "Maintain a water blanket",
+    "medicine": ["Mancozeb", "Carbendazim"],
+    "organic_medicine": ["Panchagavya"],
+    "prevention": "Use resistant varieties and clean seeds."
+  },
+  "neck_blast": {
+    "fertilizer": "Reduce nitrogen at booting stage",
+    "water": "Avoid moisture stress during flowering",
+    "medicine": ["Tricyclazole spray at booting"],
+    "organic_medicine": ["Pseudomonas fluorescens"],
+    "prevention": "Use tolerant varieties."
+  },
+  "nodal blast": {
+    "fertilizer": "Avoid excess nitrogen",
+    "water": "Maintain optimum moisture",
+    "medicine": ["Isoprothiolane", "Tricyclazole"],
+    "organic_medicine": ["Pseudomonas fluorescens"],
+    "prevention": "Use resistant varieties and remove infected nodes."
+  },
+  "rice case worm": {
+    "fertilizer": "Balanced fertilizer",
+    "water": "Drain field for few days to kill larvae",
+    "medicine": ["Chlorantraniliprole", "Diflubenzuron"],
+    "organic_medicine": ["Neem leaf extract"],
+    "prevention": "Avoid dense transplanting."
+  },
+  "Rice earhead bug": {
+    "fertilizer": "Balanced nutrition",
+    "water": "Normal irrigation",
+    "medicine": ["Malathion", "Cypermethrin"],
+    "organic_medicine": ["Neem oil"],
+    "prevention": "Remove alternate host plants."
+  },
+  "Rice Grassy stunt disease": {
+    "fertilizer": "Avoid excess nitrogen",
+    "water": "Maintain field moisture",
+    "medicine": ["No chemical cure — vector control only"],
+    "organic_medicine": ["Neem oil for vector control"],
+    "prevention": "Control leafhopper vector and use resistant seeds."
+  }
+}
