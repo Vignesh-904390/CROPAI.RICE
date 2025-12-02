@@ -52,6 +52,7 @@ model.classifier[1] = nn.Linear(in_features, len(class_names))
 model.load_state_dict(checkpoint['model_state_dict'])
 model.to(device)
 model.eval()
+print("🧠 Rice EfficientNet model loaded.")
 
 # === Transform ===
 transform = transforms.Compose([
@@ -59,29 +60,53 @@ transform = transforms.Compose([
     transforms.ToTensor(),
 ])
 
+# === Load Disease Info ===
 def normalize_key(name):
     return ''.join(e.lower() for e in name.strip() if e.isalnum())
 
-# === Load disease details (UTF-8 safe) ===
-if not os.path.exists(DISEASE_JSON_PATH):
-    # Create minimal placeholder to avoid crashes; user should replace with full details
-    placeholder = {
-        "Healthy": {
-            "fertilizer": "Maintain balanced nutrients",
-            "water": "Normal field level",
-            "medicine": ["No chemical treatment needed"],
-            "organic_medicine": ["Neem cake", "Vermicompost"],
-            "prevention": "Continue regular crop monitoring and hygiene."
-        }
-    }
-    with open(DISEASE_JSON_PATH, 'w', encoding='utf-8') as fp:
-        json.dump(placeholder, fp, ensure_ascii=False, indent=4)
+raw_disease_details = None
+_used_encoding = None
 
-with open(DISEASE_JSON_PATH, 'r', encoding='utf-8') as f:
-    raw_disease_details = json.load(f)
-disease_details = { normalize_key(k): v for k, v in raw_disease_details.items() }
+# Try utf-8 first, then fall back to cp1252 / latin-1 if needed
+try:
+    with open(DISEASE_JSON_PATH, 'r', encoding='utf-8') as f:
+        raw_disease_details = json.load(f)
+        _used_encoding = 'utf-8'
+except UnicodeDecodeError:
+    try:
+        # try with cp1252 (windows default) or latin-1 as a permissive fallback
+        with open(DISEASE_JSON_PATH, 'r', encoding='cp1252') as f:
+            raw_disease_details = json.load(f)
+            _used_encoding = 'cp1252'
+    except Exception:
+        try:
+            with open(DISEASE_JSON_PATH, 'r', encoding='latin-1') as f:
+                raw_disease_details = json.load(f)
+                _used_encoding = 'latin-1'
+        except Exception as e:
+            print(f"❌ Failed to load {DISEASE_JSON_PATH}: {e}")
+            raw_disease_details = {}
 
-REGION_GRID = (2, 2)
+except FileNotFoundError:
+    print(f"❌ Disease info file not found: {DISEASE_JSON_PATH}")
+    raw_disease_details = {}
+except json.JSONDecodeError as e:
+    print(f"❌ JSON decode error while reading {DISEASE_JSON_PATH}: {e}")
+    raw_disease_details = {}
+except Exception as e:
+    print(f"❌ Unexpected error loading {DISEASE_JSON_PATH}: {e}")
+    raw_disease_details = {}
+
+if _used_encoding:
+    print(f"ℹ️ Loaded {DISEASE_JSON_PATH} using encoding: {_used_encoding}")
+
+# Ensure we have a dict (avoid crash if file was empty)
+if not isinstance(raw_disease_details, dict):
+    raw_disease_details = {}
+
+disease_details = {normalize_key(k): v for k, v in raw_disease_details.items()}
+
+REGION_GRID = (2, 2)  # split image into 2x2 regions
 
 # === Daily stats ===
 daily_stats = {"count": 0, "timestamps": []}
@@ -100,7 +125,6 @@ def send_daily_report():
         times = "\n".join(daily_stats["timestamps"])
         msg.body = f"Total Clicks Today: {daily_stats['count']}\n\nTimes:\n{times}"
         mail.send(msg)
-        # reset
         daily_stats["count"] = 0
         daily_stats["timestamps"] = []
     except Exception as e:
@@ -110,18 +134,111 @@ scheduler = BackgroundScheduler(daemon=True)
 scheduler.add_job(send_daily_report, 'cron', hour=23, minute=59)
 scheduler.start()
 
+# === Image Split ===
 def split_image_regions(image, grid=(2,2)):
     w, h = image.size
     ws, hs = w // grid[0], h // grid[1]
     regions = []
     for i in range(grid[0]):
         for j in range(grid[1]):
-            left, top = i * ws, j * hs
-            right = left + ws if (i < grid[0] - 1) else w
-            bottom = top + hs if (j < grid[1] - 1) else h
-            regions.append(image.crop((left, top, right, bottom)))
+            left, top = i*ws, j*hs
+            regions.append(image.crop((left, top, left+ws, top+hs)))
     return regions
 
+# === Send Prediction Result Email ===
+def send_prediction_result_email(filename, prediction_results, image_path=None):
+    try:
+        msg = Message("🌾 New Rice Disease Detection Result",
+                      sender=app.config['MAIL_USERNAME'],
+                      recipients=['tdaitech@gmail.com'])
+        
+        # Create email body with prediction results
+        email_body = f"""
+        🔍 Rice Disease Detection Result
+        
+        📄 File Name: {filename}
+        ⏰ Detection Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+        
+        📊 PREDICTION RESULTS:
+        """
+        
+        for i, result in enumerate(prediction_results, 1):
+            label = result['label']
+            details = result['details']
+            
+            email_body += f"""
+            🎯 Result {i}:
+            Disease: {label}
+            
+            📝 Explanation: {details['explanation']}
+            💧 Water Requirements: {details['water']}
+            🌱 Fertilizer: {details['fertilizer']}
+            💊 Medicine: {', '.join(details['medicine'])}
+            🌿 Organic Medicine: {', '.join(details['organic_medicine'])}
+            🛡️ Prevention: {details['prevention']}
+            {'='*50}
+            """
+        
+        msg.body = email_body
+        
+        # Attach the uploaded image if available
+        if image_path and os.path.exists(image_path):
+            with open(image_path, 'rb') as img_file:
+                msg.attach(filename, "image/jpeg", img_file.read())
+        
+        mail.send(msg)
+        print("✅ Prediction result email sent successfully!")
+        
+    except Exception as e:
+        print("❌ Error sending prediction result email:", e)
+
+# === Extract details from new JSON format ===
+def extract_disease_details(disease_data, label):
+    """Extract disease details from the new JSON format with both English and Tamil keys"""
+    if not disease_data:
+        return {
+            "explanation": f"Detected {label}.",
+            "water": "N/A",
+            "fertilizer": "N/A", 
+            "medicine": ["N/A"],
+            "organic_medicine": ["N/A"],
+            "prevention": "N/A"
+        }
+    
+    # Extract English details
+    explanation = disease_data.get("explanation", f"Detected {label}.")
+    water = disease_data.get("water", "N/A")
+    fertilizer = disease_data.get("fertilizer", "N/A")
+    medicine = disease_data.get("medicine", ["N/A"])
+    organic_medicine = disease_data.get("organic_medicine", ["N/A"])
+    prevention = disease_data.get("prevention", "N/A")
+    
+    # Extract Tamil details
+    tamil_explanation = disease_data.get("விளக்கம்", explanation)
+    tamil_water = disease_data.get("நீர்", water)
+    tamil_fertilizer = disease_data.get("உரம்", fertilizer)
+    tamil_medicine = disease_data.get("மருந்து", medicine)
+    tamil_organic_medicine = disease_data.get("கரிம மருந்து", organic_medicine)
+    tamil_prevention = disease_data.get("தடுப்பு முறைகள்", prevention)
+    
+    return {
+        "explanation": explanation,
+        "water": water,
+        "fertilizer": fertilizer,
+        "medicine": medicine,
+        "organic_medicine": organic_medicine,
+        "prevention": prevention,
+        "tamil_details": {
+            "விளக்கம்": tamil_explanation,
+            "நீர்": tamil_water,
+            "உரம்": tamil_fertilizer,
+            "மருந்து": tamil_medicine,
+            "கரிம மருந்து": tamil_organic_medicine,
+            "தடுப்பு முறைகள்": tamil_prevention
+        }
+    }
+
+# === Routes ===
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -140,14 +257,12 @@ def predict_image():
     img = Image.open(path).convert('RGB')
     subs = split_image_regions(img, REGION_GRID)
 
-    best_conf = 0.0
-    best_label = None
+    best_conf, best_label = 0, None
     for r in subs:
         t = transform(r).unsqueeze(0).to(device)
         with torch.no_grad():
-            logits = model(t)
-            probs = torch.nn.functional.softmax(logits, dim=1)
-            conf, pred = torch.max(probs, 1)
+            p = torch.nn.functional.softmax(model(t), dim=1)
+            conf, pred = torch.max(p, 1)
             if conf.item() > best_conf:
                 best_conf = conf.item()
                 best_label = class_names[pred.item()].strip()
@@ -159,19 +274,18 @@ def predict_image():
     label = "Healthy" if best_label.lower() == "healthy" else best_label
     d = disease_details.get(normalize_key(label), {})
 
+    # Use the new function to extract details from JSON
+    disease_info = extract_disease_details(d, label)
+    
     info = [{
-        "label": label,
-        "details": {
-            "explanation": d.get("explanation", f"Detected {label}."),
-            "water": d.get("water", "N/A"),
-            "fertilizer": d.get("fertilizer", "N/A"),
-            "medicine": d.get("medicine", ["N/A"]),
-            "organic_medicine": d.get("organic_medicine", ["N/A"]),
-            "prevention": d.get("prevention", "N/A")
-        }
+        "label": label, 
+        "details": disease_info
     }]
 
-    return render_template('index.html', multi_predictions=info, image_url=url_for('static', filename='uploads/' + filename))
+    # Send prediction result to email
+    send_prediction_result_email(filename, info, path)
+
+    return render_template('index.html', multi_predictions=info, image_url=url_for('static', filename='uploads/'+filename))
 
 @app.route('/predict_video', methods=['POST'])
 def predict_video():
@@ -188,31 +302,24 @@ def predict_video():
     fr = cap.get(cv2.CAP_PROP_FPS)
     interval = int(fr) if fr > 0 else 10
 
-    preds = []
-    i = 0
+    preds, i = [], 0
     while cap.isOpened():
         r, frm = cap.read()
         if not r:
             break
         if i % interval == 0:
-            # quick brightness check to skip dark/blank frames
             g = cv2.cvtColor(frm, cv2.COLOR_BGR2GRAY)
             if 40 < np.mean(g) < 220:
                 pil = Image.fromarray(cv2.cvtColor(frm, cv2.COLOR_BGR2RGB))
                 for s in split_image_regions(pil, REGION_GRID):
                     t = transform(s).unsqueeze(0).to(device)
                     with torch.no_grad():
-                        logits = model(t)
-                        probs = torch.nn.functional.softmax(logits, dim=1)
-                        _, pr = torch.max(probs, 1)
+                        p = torch.nn.functional.softmax(model(t), dim=1)
+                        _, pr = torch.max(p, 1)
                         preds.append(class_names[pr.item()].strip())
         i += 1
-
     cap.release()
-    try:
-        os.remove(vp)
-    except Exception:
-        pass
+    os.remove(vp)
 
     if not preds:
         flash("⚠️ No disease found", "warning")
@@ -226,17 +333,19 @@ def predict_video():
     info = []
     for l in mc:
         d = disease_details.get(normalize_key(l), {})
-        info.append({"label": l, "details": {
-            "explanation": d.get("explanation", f"Detected {l}."),
-            "water": d.get("water", "N/A"),
-            "fertilizer": d.get("fertilizer", "N/A"),
-            "medicine": d.get("medicine", ["N/A"]),
-            "organic_medicine": d.get("organic_medicine", ["N/A"]),
-            "prevention": d.get("prevention", "N/A")
-        }})
+        # Use the new function to extract details from JSON
+        disease_info = extract_disease_details(d, l)
+        info.append({
+            "label": l, 
+            "details": disease_info
+        })
+
+    # Send video prediction result to email
+    send_prediction_result_email(name, info)
 
     return render_template('index.html', multi_predictions=info, image_url=None)
 
+# === Contact Email ===
 @app.route('/send_email', methods=['POST'])
 def send_email():
     log_click()
@@ -244,33 +353,26 @@ def send_email():
     email = request.form.get('email')
     msgt = request.form.get('message')
     photo = request.files.get('photo')
-
     if not (name and email and msgt):
         flash("❗ Fill all fields", "warning")
         return redirect('/')
-
     try:
-        m = Message("🌾 New Contact Request - Rice Detection",
-                    sender=app.config['MAIL_USERNAME'],
-                    recipients=['tdaitech@gmail.com'])
+        m = Message("🌾 New Contact Request - Rice Detection", sender=app.config['MAIL_USERNAME'], recipients=['tdaitech@gmail.com'])
         m.body = f"Name:{name}\nEmail:{email}\nMessage:{msgt}"
         if photo and photo.filename:
             fn = secure_filename(photo.filename)
             fp = os.path.join(UPLOAD_FOLDER, fn)
             photo.save(fp)
-            with open(fp, 'rb') as fh:
-                m.attach(fn, "image/jpeg", fh.read())
+            with open(fp, 'rb') as f:
+                m.attach(fn, "image/jpeg", f.read())
         mail.send(m)
-
         r = Message("✅ Thank you!", sender=app.config['MAIL_USERNAME'], recipients=[email])
         r.body = f"Hi {name},\nWe received your message."
         mail.send(r)
         flash("✅ Message sent!", "success")
-    except Exception as e:
-        print("❌ Error sending contact/email:", e)
+    except:
         flash("❌ Failed to send", "danger")
     return redirect('/')
 
 if __name__ == "__main__":
-    # set debug=False in production
     app.run(host="0.0.0.0", port=5000, debug=True)
