@@ -17,6 +17,8 @@
       --gray: #f5f5f5;
       --text: #333333;
       --chatbot-color: #2196F3;
+      --buy-button: #2196F3;
+      --buy-button-hover: #1976D2;
     }
     
     * {
@@ -176,26 +178,23 @@
     
     /* Hero Section - Full Banner */
     .hero {
-      background: 
-        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7)),
-        url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUWGBcYGBgYFxcaGhgYFxgXFxgaGBgYHSggGholHRYXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAJ8BPgMBEQACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAADBAUCBgEAB//EAD0QAAIBAgQDBwIEAwcFAQEAAAECEQADBBIhMQVBURMiYXGBkaEysQZCwdEUI1JicoKS4fDxFTNDosLSsv/EABoBAAMBAQEBAAAAAAAAAAAAAAIDBAEABQb/xAAxEQACAgICAQMDAgUFAQEBAAABAgARAyESMUEEIlETYXEygRQjkbHwBULB0eGh8VL/2gAMAwEAAhEDEQA/AP3GunTyunTNwaUDixqaO59baRXI1icw3NGiMyeK1YDc6emtnTCmgU7IhGaopkE4j1pLitfMJYGpatmjEbDYfrSj0z2OPxFuJm6RFZkIK1NQRa22pFQYclZGUxpGpoMVNGHOM2vU4i4UNOtUBw+zAqTsTZgkr7V43rPSLZZJQja3FkuV5AyMhhkCUsFfBkHQ19F/pnrceQFCaMnyrVGRbJIB6V6CFS1+Ig9w2GwwbUmo/X+o4Ch3G40uM2sLb8T6182/V7ao9W2IvbxYAgDSp19TlDQStzbb19Bg9YMg5CJYVNjJ4TT29UGhKh6iqYgnekyYHm4ImRAAk1lnzMC35hjVZtrgUwd6nzepGMbmqhMIbJIgCs/i1Zag8dwlq2QINSJmIdieoeoLi1x1QQPOnepyuEuBqqnzNlzHo2/gBQZMvHHFAC5sX8usVImW2Fw+NyLPvPyQqLp0r2vS5+WImSUVMZ1yW+Y5zQZPWMThlD5MvX7Q5DSqfV+oY+0SfGN3Fi5JryseJy1tHKvcU4xwkYhQGBypqT18KpwlUyfisTl5aE5NOLW8O4KAFT9Qq31HHO5DG4h8FbXxKd1s3eGun7V5mQfTbifEjx4yVs+ZUwzI9pUyQwIBjYnzr1PThMmEAizHLF/ZjJ+0n8SwqoiQIJOp9a9T0uNcaOoEV6dQWkzid3IAQYk6+m9V+gYLiY/Jg+rOxMDjTCCsMZ0+9fPelxlsjEdDc7Cu9yFfw6qWIUZtSCeQ5mK9XFkORyB0J5uRmLE9DxJN29cu5Tct5wCSp20jUUWbGq1+0PGT2Z0n4Ee22a8e0D6C3PdgTOnPwqT1Xqz6ZV4rc9T0+Bcm2nR4jBAOwttC8huR4VHi9ay2D5m5/TgGxI3D8IqM14iWDMoO2o/1NV+r9W2Qqh6sSfDhqwYkX0IjXMRXpmvdJ6g3q5pLJ0G9ZZPU7r4hjHqDBv8AzmgwZ1Zis1lqFwV8rEH7VO+RsOe/E1BYj11SwBGtV5fVl1owOMETc1EVufTc9bIMQH/IDCIhYwBV2PGWG5xMZw+HKnvGK9DC7XxIglh2Jq7bUxG9W8EO4IZpM4pwxdWA1io82EoaHmPDWJGbFt1EDl1FchdOoy1q5//9k=') 
-        no-repeat center center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                  url('https://eos.com/wp-content/uploads/2023/04/rice-field.jpg.webp') 
+                  no-repeat center center/cover;
       height: 80vh;
       display: flex;
       align-items: center;
       text-align: center;
       position: relative;
       margin-bottom: 40px;
-      filter: brightness(1.1) contrast(1.1);
     }
     
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
-      color: var(--dark);
+      color: var(--white);
       padding: 0 20px;
       animation: fadeIn 1.5s ease-in;
-      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
     }
     
     @keyframes fadeIn {
@@ -209,13 +208,13 @@
       font-weight: 900;
       margin-bottom: 20px;
       line-height: 1.2;
-      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
     
     .hero p {
       font-size: 1.5rem;
       margin-bottom: 30px;
-      text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     }
     
     /* Upload Section */
@@ -535,6 +534,46 @@
       border-color: var(--primary);
     }
     
+    /* Buy Button Styling */
+    .buy-button {
+      background-color: var(--buy-button);
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      margin-left: 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+    
+    .buy-button:hover {
+      background-color: var(--buy-button-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+    }
+    
+    .buy-button i {
+      font-size: 0.7rem;
+    }
+    
+    .medicine-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      padding: 5px 0;
+    }
+    
+    .medicine-name {
+      flex: 1;
+    }
+    
     /* Footer */
     footer {
       background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
@@ -825,6 +864,13 @@
         align-items: center;
       }
       
+      /* Buy Button Responsive */
+      .buy-button {
+        padding: 3px 8px;
+        font-size: 0.75rem;
+        margin-left: 8px;
+      }
+      
       /* Chatbot Avatar Responsive */
       .chatbot-avatar {
         bottom: 90px;
@@ -870,6 +916,12 @@
         padding: 12px 20px;
         font-size: 0.9rem;
       }
+      
+      .buy-button {
+        padding: 2px 6px;
+        font-size: 0.7rem;
+        margin-left: 5px;
+      }
     }
   </style>
 </head>
@@ -888,13 +940,13 @@
 
 <!-- Header Banner -->
 <header class="hero" 
-  style="background-image: url('data:image/jpeg;base64,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'); 
+  style="background-image: url('https://eos.com/wp-content/uploads/2023/04/rice-field.jpg.webp'); 
          background-size: cover; 
          background-position: center; 
          background-repeat: no-repeat;">
   <div class="hero-content">
     <h1 data-translate="hero-title">Rice Crop Disease Detection</h1>
-    <p data-translate="hero-subtitle">Upload your coconut leaf image or video to detect diseases instantly with AI-powered analysis</p>
+    <p data-translate="hero-subtitle">Upload your rice leaf image or video to detect diseases instantly with AI-powered analysis</p>
   </div>
 </header>
 
@@ -958,20 +1010,20 @@
     <!-- Upload Options -->
     <div class="upload-section">
         <div class="card">
-            <h3><i class="fas fa-camera"></i> <span data-translate="upload-image-title">Upload Leaf Image</span></h3>
+            <h3><i class="fas fa-camera"></i> <span data-translate="upload-image-title">Upload Rice Leaf Image</span></h3>
             <p data-translate="upload-image-desc">Upload a clear image of a rice leaf for disease detection</p>
             <form action="/predict" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" accept="image/*" required title="Select leaf image">
+                <input type="file" name="image" accept="image/*" required title="Select rice leaf image">
                 <br>
                 <button type="submit"><i class="fas fa-search"></i> <span data-translate="diagnose-image">Diagnose Image</span></button>
             </form>
         </div>
 
         <div class="card">
-            <h3><i class="fas fa-video"></i> <span data-translate="upload-video-title">Upload Leaf Video</span></h3>
-            <p data-translate="upload-video-desc">Upload a video of rice leaves for comprehensive analysis</p>
+            <h3><i class="fas fa-video"></i> <span data-translate="upload-video-title">Upload Rice Field Video</span></h3>
+            <p data-translate="upload-video-desc">Upload a video of rice field for comprehensive analysis</p>
             <form action="/predict_video" method="POST" enctype="multipart/form-data">
-                <input type="file" name="video" accept="video/*" required title="Select leaf video">
+                <input type="file" name="video" accept="video/*" required title="Select rice field video">
                 <br>
                 <button type="submit"><i class="fas fa-search"></i> <span data-translate="diagnose-video">Diagnose Video</span></button>
             </form>
@@ -1009,11 +1061,29 @@
                 {% if details.fertilizer %}<p><strong><i class="fas fa-seedling"></i> Fertilizer:</strong> {{ details.fertilizer }}</p>{% endif %}
                 {% if details.medicine %}
                     <p><strong><i class="fas fa-pills"></i> Medicine:</strong></p>
-                    <ul>{% for med in details.medicine %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.medicine %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">Buy</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.organic_medicine %}
                     <p><strong><i class="fas fa-leaf"></i> Organic Medicine:</strong></p>
-                    <ul>{% for org in details.organic_medicine %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.organic_medicine %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">Buy</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.prevention %}<p><strong><i class="fas fa-shield-alt"></i> Prevention:</strong> {{ details.prevention }}</p>{% endif %}
             </div>
@@ -1026,11 +1096,29 @@
                 {% if details.tamil.get('உரம்') %}<p><strong><i class="fas fa-seedling"></i> உரம்:</strong> {{ details.tamil.get('உரம்', 'N/A') }}</p>{% endif %}
                 {% if details.tamil.get('மருந்து') %}
                     <p><strong><i class="fas fa-pills"></i> மருந்து:</strong></p>
-                    <ul>{% for med in details.tamil.get('மருந்து', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.tamil.get('மருந்து', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">வாங்க</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.tamil.get('கரிம மருந்து') %}
                     <p><strong><i class="fas fa-leaf"></i> கரிம மருந்து:</strong></p>
-                    <ul>{% for org in details.tamil.get('கரிம மருந்து', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.tamil.get('கரிம மருந்து', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">வாங்க</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.tamil.get('தடுப்பு முறைகள்') %}<p><strong><i class="fas fa-shield-alt"></i> தடுப்பு முறைகள்:</strong> {{ details.tamil.get('தடுப்பு முறைகள்', 'N/A') }}</p>{% endif %}
             </div>
@@ -1043,11 +1131,29 @@
                 {% if details.hindi.get('उर्वरक') %}<p><strong><i class="fas fa-seedling"></i> उर्वरक:</strong> {{ details.hindi.get('उर्वरक', 'N/A') }}</p>{% endif %}
                 {% if details.hindi.get('दवा') %}
                     <p><strong><i class="fas fa-pills"></i> दवा:</strong></p>
-                    <ul>{% for med in details.hindi.get('दवा', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.hindi.get('दवा', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">खरीदें</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.hindi.get('जैविक दवा') %}
                     <p><strong><i class="fas fa-leaf"></i> जैविक दवा:</strong></p>
-                    <ul>{% for org in details.hindi.get('जैविक दवा', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.hindi.get('जैविक दवा', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">खरीदें</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.hindi.get('रोकथाम') %}<p><strong><i class="fas fa-shield-alt"></i> रोकथाम:</strong> {{ details.hindi.get('रोकथाम', 'N/A') }}</p>{% endif %}
             </div>
@@ -1060,11 +1166,29 @@
                 {% if details.malayalam.get('വളം') %}<p><strong><i class="fas fa-seedling"></i> വളം:</strong> {{ details.malayalam.get('വളം', 'N/A') }}</p>{% endif %}
                 {% if details.malayalam.get('മരുന്ന്') %}
                     <p><strong><i class="fas fa-pills"></i> മരുന്ന്:</strong></p>
-                    <ul>{% for med in details.malayalam.get('മരുന്ന്', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.malayalam.get('മരുന്ന്', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">വാങ്ങുക</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.malayalam.get('ജൈവ മരുന്ന്') %}
                     <p><strong><i class="fas fa-leaf"></i> ജൈവ മരുന്ന്:</strong></p>
-                    <ul>{% for org in details.malayalam.get('ജൈവ മരുന്ന്', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.malayalam.get('ജൈവ മരുന്ന്', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">വാങ്ങുക</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.malayalam.get('തടയൽ') %}<p><strong><i class="fas fa-shield-alt"></i> തടയൽ:</strong> {{ details.malayalam.get('തടയൽ', 'N/A') }}</p>{% endif %}
             </div>
@@ -1077,11 +1201,29 @@
                 {% if details.telugu.get('ఎరువు') %}<p><strong><i class="fas fa-seedling"></i> ఎరువు:</strong> {{ details.telugu.get('ఎరువు', 'N/A') }}</p>{% endif %}
                 {% if details.telugu.get('మందు') %}
                     <p><strong><i class="fas fa-pills"></i> మందు:</strong></p>
-                    <ul>{% for med in details.telugu.get('మందు', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.telugu.get('మందు', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">కొనండి</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.telugu.get('సేంద్రియ మందు') %}
                     <p><strong><i class="fas fa-leaf"></i> సేంద్రియ మందు:</strong></p>
-                    <ul>{% for org in details.telugu.get('సేంద్రియ మందు', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.telugu.get('సేంద్రియ మందు', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">కొనండి</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.telugu.get('నివారణ') %}<p><strong><i class="fas fa-shield-alt"></i> నివారణ:</strong> {{ details.telugu.get('నివారణ', 'N/A') }}</p>{% endif %}
             </div>
@@ -1094,11 +1236,29 @@
                 {% if details.kannada.get('ಎರುವು') %}<p><strong><i class="fas fa-seedling"></i> ಎರುವು:</strong> {{ details.kannada.get('ಎರುವು', 'N/A') }}</p>{% endif %}
                 {% if details.kannada.get('ಮದ್ದು') %}
                     <p><strong><i class="fas fa-pills"></i> ಮದ್ದು:</strong></p>
-                    <ul>{% for med in details.kannada.get('ಮದ್ದು', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.kannada.get('ಮದ್ದು', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">ಖರೀದಿಸಿ</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.kannada.get('ಸಾವಯವ ಮದ್ದು') %}
                     <p><strong><i class="fas fa-leaf"></i> ಸಾವಯವ ಮದ್ದು:</strong></p>
-                    <ul>{% for org in details.kannada.get('ಸಾವಯವ ಮದ್ದು', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.kannada.get('ಸಾವಯವ ಮದ್ದು', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">ಖರೀದಿಸಿ</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.kannada.get('ತಡೆಗಟ್ಟುವಿಕೆ') %}<p><strong><i class="fas fa-shield-alt"></i> ತಡೆಗಟ್ಟುವಿಕೆ:</strong> {{ details.kannada.get('ತಡೆಗಟ್ಟುವಿಕೆ', 'N/A') }}</p>{% endif %}
             </div>
@@ -1111,11 +1271,29 @@
                 {% if details.urdu.get('کھاد') %}<p><strong><i class="fas fa-seedling"></i> کھاد:</strong> {{ details.urdu.get('کھاد', 'N/A') }}</p>{% endif %}
                 {% if details.urdu.get('دوا') %}
                     <p><strong><i class="fas fa-pills"></i> دوا:</strong></p>
-                    <ul>{% for med in details.urdu.get('دوا', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for med in details.urdu.get('دوا', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ med }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">خریدیں</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.urdu.get('نامیاتی دوا') %}
                     <p><strong><i class="fas fa-leaf"></i> نامیاتی دوا:</strong></p>
-                    <ul>{% for org in details.urdu.get('نامیاتی دوا', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                    <ul>
+                    {% for org in details.urdu.get('نامیاتی دوا', []) %}
+                        <li class="medicine-item">
+                            <span class="medicine-name">{{ org }}</span>
+                            <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                <i class="fas fa-shopping-cart"></i> <span data-translate="buy">خریدیں</span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                    </ul>
                 {% endif %}
                 {% if details.urdu.get('روک تھام') %}<p><strong><i class="fas fa-shield-alt"></i> روک تھام:</strong> {{ details.urdu.get('روک تھام', 'N/A') }}</p>{% endif %}
             </div>
@@ -1164,11 +1342,29 @@
                         {% if item.details.fertilizer %}<p><strong><i class="fas fa-seedling"></i> Fertilizer:</strong> {{ item.details.fertilizer }}</p>{% endif %}
                         {% if item.details.medicine %}
                             <p><strong><i class="fas fa-pills"></i> Medicine:</strong></p>
-                            <ul>{% for med in item.details.medicine %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.medicine %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">Buy</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.organic_medicine %}
                             <p><strong><i class="fas fa-leaf"></i> Organic Medicine:</strong></p>
-                            <ul>{% for org in item.details.organic_medicine %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.organic_medicine %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">Buy</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.prevention %}<p><strong><i class="fas fa-shield-alt"></i> Prevention:</strong> {{ item.details.prevention }}</p>{% endif %}
                     </div>
@@ -1180,11 +1376,29 @@
                         {% if item.details.tamil.get('உரம்') %}<p><strong><i class="fas fa-seedling"></i> உரம்:</strong> {{ item.details.tamil.get('உரம்', 'N/A') }}</p>{% endif %}
                         {% if item.details.tamil.get('மருந்து') %}
                             <p><strong><i class="fas fa-pills"></i> மருந்து:</strong></p>
-                            <ul>{% for med in item.details.tamil.get('மருந்து', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.tamil.get('மருந்து', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">வாங்க</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.tamil.get('கரிம மருந்து') %}
                             <p><strong><i class="fas fa-leaf"></i> கரிம மருந்து:</strong></p>
-                            <ul>{% for org in item.details.tamil.get('கரிம மருந்து', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.tamil.get('கரிம மருந்து', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">வாங்க</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.tamil.get('தடுப்பு முறைகள்') %}<p><strong><i class="fas fa-shield-alt"></i> தடுப்பு முறைகள்:</strong> {{ item.details.tamil.get('தடுப்பு முறைகள்', 'N/A') }}</p>{% endif %}
                     </div>
@@ -1196,11 +1410,29 @@
                         {% if item.details.hindi.get('उर्वरक') %}<p><strong><i class="fas fa-seedling"></i> उर्वरक:</strong> {{ item.details.hindi.get('उर्वरक', 'N/A') }}</p>{% endif %}
                         {% if item.details.hindi.get('दवा') %}
                             <p><strong><i class="fas fa-pills"></i> दवा:</strong></p>
-                            <ul>{% for med in item.details.hindi.get('दवा', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.hindi.get('दवा', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">खरीदें</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.hindi.get('जैविक दवा') %}
                             <p><strong><i class="fas fa-leaf"></i> जैविक दवा:</strong></p>
-                            <ul>{% for org in item.details.hindi.get('जैविक दवा', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.hindi.get('जैविक दवा', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">खरीदें</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.hindi.get('रोकथाम') %}<p><strong><i class="fas fa-shield-alt"></i> रोकथाम:</strong> {{ item.details.hindi.get('रोकथाम', 'N/A') }}</p>{% endif %}
                     </div>
@@ -1212,11 +1444,29 @@
                         {% if item.details.malayalam.get('വളം') %}<p><strong><i class="fas fa-seedling"></i> വളം:</strong> {{ item.details.malayalam.get('വളം', 'N/A') }}</p>{% endif %}
                         {% if item.details.malayalam.get('മരുന്ന്') %}
                             <p><strong><i class="fas fa-pills"></i> മരുന്ന്:</strong></p>
-                            <ul>{% for med in item.details.malayalam.get('മരുന്ന്', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.malayalam.get('മരുന്ന്', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">വാങ്ങുക</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.malayalam.get('ജൈവ മരുന്ന്') %}
                             <p><strong><i class="fas fa-leaf"></i> ജൈവ മരുന്ന്:</strong></p>
-                            <ul>{% for org in item.details.malayalam.get('ജൈവ മരുന്ന്', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.malayalam.get('ജൈവ മരുന്ന്', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">വാങ്ങുക</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.malayalam.get('തടയൽ') %}<p><strong><i class="fas fa-shield-alt"></i> തടയൽ:</strong> {{ item.details.malayalam.get('തടയൽ', 'N/A') }}</p>{% endif %}
                     </div>
@@ -1228,11 +1478,29 @@
                         {% if item.details.telugu.get('ఎరువు') %}<p><strong><i class="fas fa-seedling"></i> ఎరువు:</strong> {{ item.details.telugu.get('ఎరువు', 'N/A') }}</p>{% endif %}
                         {% if item.details.telugu.get('మందు') %}
                             <p><strong><i class="fas fa-pills"></i> మందు:</strong></p>
-                            <ul>{% for med in item.details.telugu.get('మందు', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.telugu.get('మందు', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">కొనండి</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.telugu.get('సేంద్రియ మందు') %}
                             <p><strong><i class="fas fa-leaf"></i> సేంద్రియ మందు:</strong></p>
-                            <ul>{% for org in item.details.telugu.get('సేంద్రియ మందు', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.telugu.get('సేంద్రియ మందు', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">కొనండి</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.telugu.get('నివారణ') %}<p><strong><i class="fas fa-shield-alt"></i> నివారణ:</strong> {{ item.details.telugu.get('నివారణ', 'N/A') }}</p>{% endif %}
                     </div>
@@ -1244,11 +1512,29 @@
                         {% if item.details.kannada.get('ಎರುವು') %}<p><strong><i class="fas fa-seedling"></i> ಎರುವು:</strong> {{ item.details.kannada.get('ಎರುವು', 'N/A') }}</p>{% endif %}
                         {% if item.details.kannada.get('ಮದ್ದು') %}
                             <p><strong><i class="fas fa-pills"></i> ಮದ್ದು:</strong></p>
-                            <ul>{% for med in item.details.kannada.get('ಮದ್ದು', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.kannada.get('ಮದ್ದು', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">ಖರೀದಿಸಿ</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.kannada.get('ಸಾವಯವ ಮದ್ದು') %}
                             <p><strong><i class="fas fa-leaf"></i> ಸಾವಯವ ಮದ್ದು:</strong></p>
-                            <ul>{% for org in item.details.kannada.get('ಸಾವಯವ ಮದ್ದು', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.kannada.get('ಸಾವಯವ ಮದ್ದು', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">ಖರೀದಿಸಿ</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.kannada.get('ತಡೆಗಟ್ಟುವಿಕೆ') %}<p><strong><i class="fas fa-shield-alt"></i> ತಡೆಗಟ್ಟುವಿಕೆ:</strong> {{ item.details.kannada.get('ತಡೆಗಟ್ಟುವಿಕೆ', 'N/A') }}</p>{% endif %}
                     </div>
@@ -1260,11 +1546,29 @@
                         {% if item.details.urdu.get('کھاد') %}<p><strong><i class="fas fa-seedling"></i> کھاد:</strong> {{ item.details.urdu.get('کھاد', 'N/A') }}</p>{% endif %}
                         {% if item.details.urdu.get('دوا') %}
                             <p><strong><i class="fas fa-pills"></i> دوا:</strong></p>
-                            <ul>{% for med in item.details.urdu.get('دوا', []) %}<li>{{ med }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for med in item.details.urdu.get('دوا', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ med }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ med }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">خریدیں</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.urdu.get('نامیاتی دوا') %}
                             <p><strong><i class="fas fa-leaf"></i> نامیاتی دوا:</strong></p>
-                            <ul>{% for org in item.details.urdu.get('نامیاتی دوا', []) %}<li>{{ org }}</li>{% endfor %}</ul>
+                            <ul>
+                            {% for org in item.details.urdu.get('نامیاتی دوا', []) %}
+                                <li class="medicine-item">
+                                    <span class="medicine-name">{{ org }}</span>
+                                    <button class="buy-button" onclick="searchMedicine('{{ org }}')">
+                                        <i class="fas fa-shopping-cart"></i> <span data-translate="buy">خریدیں</span>
+                                    </button>
+                                </li>
+                            {% endfor %}
+                            </ul>
                         {% endif %}
                         {% if item.details.urdu.get('روک تھام') %}<p><strong><i class="fas fa-shield-alt"></i> روک تھام:</strong> {{ item.details.urdu.get('روک تھام', 'N/A') }}</p>{% endif %}
                     </div>
@@ -1283,7 +1587,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2025 <span data-translate="app-name">Rice Crop Disease Detection</span> | <span data-translate="built-for">Built with</span> <i class="fas fa-heart"></i> <span data-translate="for-farmers">for Farmers</span></p>
+    <p>© 2025 <span data-translate="app-name">Rice Disease Detection</span> | <span data-translate="built-for">Built with</span> <i class="fas fa-heart"></i> <span data-translate="for-farmers">for Farmers</span></p>
     <p style="font-weight: bold; color: var(--secondary);" data-translate="powered-by">Powered by TDA TECHNOLOGY</p>
   </div>
 </footer>
@@ -1309,13 +1613,13 @@
   // Language data
   const translations = {
     en: {
-      "app-name": "Rice Crop Disease Detection",
+      "app-name": "Rice Disease Detection",
       "hero-title": "Rice Crop Disease Detection",
       "hero-subtitle": "Upload your rice leaf image or video to detect diseases instantly with AI-powered analysis",
-      "upload-image-title": "Upload Leaf Image",
+      "upload-image-title": "Upload Rice Leaf Image",
       "upload-image-desc": "Upload a clear image of a rice leaf for disease detection",
-      "upload-video-title": "Upload Leaf Video",
-      "upload-video-desc": "Upload a video of rice leaves for comprehensive analysis",
+      "upload-video-title": "Upload Rice Field Video",
+      "upload-video-desc": "Upload a video of rice field for comprehensive analysis",
       "diagnose-image": "Diagnose Image",
       "diagnose-video": "Diagnose Video",
       "predicted-disease": "Predicted Disease",
@@ -1335,16 +1639,17 @@
       "for-farmers": "for Farmers",
       "powered-by": "Powered by TDA TECHNOLOGY",
       "chatbot-tooltip": "Need more help? Ask me anything!",
-      "chatbot-speech": "You want more information? Feel free to ask me! 😊"
+      "chatbot-speech": "You want more information? Feel free to ask me! 😊",
+      "buy": "Buy"
     },
     ta: {
-      "app-name": "நெல் பயிர் நோய் கண்டறிதல்",
+      "app-name": "நெல் நோய் கண்டறிதல்",
       "hero-title": "நெல் பயிர் நோய் கண்டறிதல்",
       "hero-subtitle": "உங்கள் நெல் இலை படம் அல்லது வீடியோவை பதிவேற்றி AI-இன் மூலம் உடனடியாக நோய்களை கண்டறியவும்",
-      "upload-image-title": "இலை படத்தை பதிவேற்று",
+      "upload-image-title": "நெல் இலை படத்தை பதிவேற்று",
       "upload-image-desc": "நோயை கண்டறிய நெல் இலையின் தெளிவான படத்தை பதிவேற்றவும்",
-      "upload-video-title": "இலை வீடியோவை பதிவேற்று",
-      "upload-video-desc": "விரிவான பகுப்பாய்விற்கு நெல் இலைகளின் வீடியோவை பதிவேற்றவும்",
+      "upload-video-title": "நெல் வயல் வீடியோவை பதிவேற்று",
+      "upload-video-desc": "விரிவான பகுப்பாய்விற்கு நெல் வயலின் வீடியோவை பதிவேற்றவும்",
       "diagnose-image": "படத்தை கண்டறியவும்",
       "diagnose-video": "வீடியோவை கண்டறியவும்",
       "predicted-disease": "கண்டறியப்பட்ட நோய்",
@@ -1364,16 +1669,17 @@
       "for-farmers": "விவசாயிகளுக்காக",
       "powered-by": "TDA TECHNOLOGY ஆல் இயக்கப்படுகிறது",
       "chatbot-tooltip": "மேலும் உதவி தேவையா? எதையும் கேளுங்கள்!",
-      "chatbot-speech": "மேலும் தகவல் வேண்டுமா? என்னிடம் கேட்க தயங்காதீர்கள்! 😊"
+      "chatbot-speech": "மேலும் தகவல் வேண்டுமா? என்னிடம் கேட்க தயங்காதீர்கள்! 😊",
+      "buy": "வாங்க"
     },
     hi: {
-      "app-name": "धान की फसल रोग पहचान",
-      "hero-title": "धान की फसल रोग पहचान",
-      "hero-subtitle": "अपनी धान की पत्ती की छवि या वीडियो अपलोड करें और AI-संचालित विश्लेषण के साथ तुरंत बीमारियों का पता लगाएं",
-      "upload-image-title": "पत्ती छवि अपलोड करें",
-      "upload-image-desc": "रोग पहचान के लिए धान के पत्ते की स्पष्ट छवि अपलोड करें",
-      "upload-video-title": "पत्ती वीडियो अपलोड करें",
-      "upload-video-desc": "व्यापक विश्लेषण के लिए धान के पत्तों का वीडियो अपलोड करें",
+      "app-name": "चावल रोग पहचान",
+      "hero-title": "चावल की फसल रोग पहचान",
+      "hero-subtitle": "अपने चावल के पत्ते की छवि या वीडियो अपलोड करें और AI-संचालित विश्लेषण के साथ तुरंत बीमारियों का पता लगाएं",
+      "upload-image-title": "चावल पत्ती छवि अपलोड करें",
+      "upload-image-desc": "रोग पहचान के लिए चावल के पत्ते की स्पष्ट छवि अपलोड करें",
+      "upload-video-title": "चावल खेत वीडियो अपलोड करें",
+      "upload-video-desc": "व्यापक विश्लेषण के लिए चावल के खेत का वीडियो अपलोड करें",
       "diagnose-image": "छवि का निदान करें",
       "diagnose-video": "वीडियो का निदान करें",
       "predicted-disease": "पूर्वानुमानित रोग",
@@ -1393,124 +1699,129 @@
       "for-farmers": "किसानों के लिए",
       "powered-by": "TDA TECHNOLOGY द्वारा संचालित",
       "chatbot-tooltip": "और मदद चाहिए? मुझसे कुछ भी पूछें!",
-      "chatbot-speech": "आप और जानकारी चाहते हैं? मुझसे पूछने में संकोच न करें! 😊"
+      "chatbot-speech": "आप और जानकारी चाहते हैं? मुझसे पूछने में संकोच न करें! 😊",
+      "buy": "खरीदें"
     },
-     ml: {
-  "app-name": "തെങ്ങ് രോഗ തിരിച്ചറിയൽ",
-  "hero-title": "തെങ്ങ് രോഗ തിരിച്ചറിയൽ",
-  "hero-subtitle": "നിങ്ങളുടെ തെങ്ങിൻ ഇലയുടെ ചിത്രം അല്ലെങ്കിൽ വീഡിയോ അപ്‌ലോഡ് ചെയ്ത് AI-ശക്തമായ വിശകലനം ഉപയോഗിച്ച് തൽക്ഷണം രോഗങ്ങൾ കണ്ടെത്തുക",
-  "upload-image-title": "ഇലയുടെ ചിത്രം അപ്‌ലോഡ് ചെയ്യുക",
-  "upload-image-desc": "രോഗ തിരിച്ചറിയലിനായി തെങ്ങിൻ ഇലയുടെ വ്യക്തമായ ചിത്രം അപ്‌ലോഡ് ചെയ്യുക",
-  "upload-video-title": "ഇലയുടെ വീഡിയോ അപ്‌ലോഡ് ചെയ്യുക",
-  "upload-video-desc": "വിപുലമായ വിശകലനത്തിനായി തെങ്ങിൻ ഇലകളുടെ വീഡിയോ അപ്‌ലോഡ് ചെയ്യുക",
-  "diagnose-image": "ചിത്രം രോഗനിർണയം ചെയ്യുക",
-  "diagnose-video": "വീഡിയോ രോഗനിർണയം ചെയ്യുക",
-  "predicted-disease": "പ്രവചിച്ച രോഗം",
-  "detected-diseases": "കണ്ടെത്തിയ രോഗങ്ങൾ",
-  "explanation": "വിശദീകരണം",
-  "water": "വെള്ളം",
-  "fertilizer": "വളം",
-  "medicine": "മരുന്ന്",
-  "organic-medicine": "ജൈവ മരുന്ന്",
-  "prevention": "തടയൽ",
-  "uploaded-image": "അപ്‌ലോഡ് ചെയ്ത ചിത്രം",
-  "uploaded-frame": "അപ്‌ലോഡ് ചെയ്ത വീഡിയോ ഫ്രെയിം",
-  "contact": "ബന്ധപ്പെടുക",
-  "contact-us": "ഞങ്ങളെ ബന്ധപ്പെടുക",
-  "send-message": "സന്ദേശം അയയ്ക്കുക",
-  "built-for": "ഉപയോഗിച്ച് നിർമ്മിച്ചത്",
-  "for-farmers": "കർഷകർക്കായി",
-  "powered-by": "TDA TECHNOLOGY നൽകുന്ന ശക്തി",
-  "chatbot-tooltip": "കൂടുതൽ സഹായം വേണോ? എന്നോട് എന്തും ചോദിക്കുക!",
-  "chatbot-speech": "കൂടുതൽ വിവരങ്ങൾ വേണമോ? ചോദിക്കാൻ ഒട്ടും സംശയിക്കേണ്ട! 😊"
-},
-    te:{
-  "app-name": "కొబ్బరి వ్యాధి గుర్తింపు",
-  "hero-title": "కొబ్బరి చెట్టు వ్యాధి గుర్తింపు",
-  "hero-subtitle": "మీ కొబ్బరి ఆకు ఇమేజ్ లేదా వీడియోను అప్‌లోడ్ చేసి, AI-ఆధారిత విశ్లేషణతో తక్షణమే వ్యాధులను గుర్తించండి",
-  "upload-image-title": "ఆకు ఇమేజ్ అప్‌లోడ్ చేయండి",
-  "upload-image-desc": "వ్యాధి గుర్తింపు కోసం కొబ్బరి ఆకు యొక్క స్పష్టమైన ఇమేజ్ ను అప్‌లోడ్ చేయండి",
-  "upload-video-title": "ఆకు వీడియో అప్‌లోడ్ చేయండి",
-  "upload-video-desc": "విస్తృత విశ్లేషణ కోసం కొబ్బరి ఆకుల వీడియోను అప్‌లోడ్ చేయండి",
-  "diagnose-image": "ఇమేజ్ ను రోగనిర్ధారణ చేయండి",
-  "diagnose-video": "వీడియోను రోగనిర్ధారణ చేయండి",
-  "predicted-disease": "అంచనా వేసిన వ్యాధి",
-  "detected-diseases": "గుర్తించబడిన వ్యాధులు",
-  "explanation": "వివరణ",
-  "water": "నీరు",
-  "fertilizer": "ఎరువు",
-  "medicine": "మందు",
-  "organic-medicine": "సేంద్రియ మందు",
-  "prevention": "నివారణ",
-  "uploaded-image": "అప్‌లోడ్ చేసిన ఇమేజ్",
-  "uploaded-frame": "అప్‌లోడ్ చేసిన వీడియో ఫ్రేమ్",
-  "contact": "సంప్రదించండి",
-  "contact-us": "మమ్మల్ని సంప్రదించండి",
-  "send-message": "సందేశం పంపండి",
-  "built-for": "తో నిర్మించబడింది",
-  "for-farmers": "రైతుల కోసం",
-  "powered-by": "TDA TECHNOLOGY ద్వారా సమర్థించబడింది",
-  "chatbot-tooltip": "మరింత సహాయం కావాలా? నన్ను ఏదైనా అడగండి!",
-  "chatbot-speech": "మీకు మరింత సమాచారం కావాలా? అడగడానికి సంకోచించకండి! 😊"
-},
-    kn:{
-  "app-name": "ತೆಂಗಿನ ರೋಗ ಗುರುತಿಸುವಿಕೆ",
-  "hero-title": "ತೆಂಗಿನ ಮರದ ರೋಗ ಗುರುತಿಸುವಿಕೆ",
-  "hero-subtitle": "ನಿಮ್ಮ ತೆಂಗಿನ ಎಲೆಯ ಚಿತ್ರ ಅಥವಾ ವೀಡಿಯೊವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ಮತ್ತು AI-ಚಾಲಿತ ವಿಶ್ಲೇಷಣೆಯೊಂದಿಗೆ ತಕ್ಷಣ ರೋಗಗಳನ್ನು ಪತ್ತೆ ಮಾಡಿ",
-  "upload-image-title": "ಎಲೆಯ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
-  "upload-image-desc": "ರೋಗ ಗುರುತಿಸುವಿಕೆಗಾಗಿ ತೆಂಗಿನ ಎಲೆಯ ಸ್ಪಷ್ಟ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
-  "upload-video-title": "ಎಲೆಯ ವೀಡಿಯೊ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
-  "upload-video-desc": "ವ್ಯಾಪಕ ವಿಶ್ಲೇಷಣೆಗಾಗಿ ತೆಂಗಿನ ಎಲೆಗಳ ವೀಡಿಯೊವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
-  "diagnose-image": "ಚಿತ್ರವನ್ನು ರೋಗನಿರ್ಣಯ ಮಾಡಿ",
-  "diagnose-video": "ವೀಡಿಯೊವನ್ನು ರೋಗನಿರ್ಣಯ ಮಾಡಿ",
-  "predicted-disease": "ಊಹಿಸಲಾದ ರೋಗ",
-  "detected-diseases": "ಗುರುತಿಸಲಾದ ರೋಗಗಳು",
-  "explanation": "ವಿವರಣೆ",
-  "water": "ನೀರು",
-  "fertilizer": "ಎರುವು",
-  "medicine": "ಮದ್ದು",
-  "organic-medicine": "ಸಾವಯವ ಮದ್ದು",
-  "prevention": "ತಡೆಗಟ್ಟುವಿಕೆ",
-  "uploaded-image": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ಚಿತ್ರ",
-  "uploaded-frame": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ವೀಡಿಯೊ ಫ್ರೇಮ್",
-  "contact": "ಸಂಪರ್ಕಿಸಿ",
-  "contact-us": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
-  "send-message": "ಸಂದೇಶ ಕಳುಹಿಸಿ",
-  "built-for": "ಜೊತೆಗೆ ನಿರ್ಮಿಸಲಾಗಿದೆ",
-  "for-farmers": "ರೈತರಿಗಾಗಿ",
-  "powered-by": "TDA TECHNOLOGY ನಿಂದ ಶಕ್ತಿ ಪಡೆದಿದೆ",
-  "chatbot-tooltip": "ಹೆಚ್ಚಿನ ಸಹಾಯ ಬೇಕೇ? ನನ್ನನ್ನು ಏನಾದರೂ ಕೇಳಿ!",
-  "chatbot-speech": "ನಿಮಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಬೇಕೇ? ಕೇಳಲು ಹಿಂಜರಿಯಬೇಡಿ! 😊"
-},
+    ml: {
+      "app-name": "അരി രോഗ തിരിച്ചറിയൽ",
+      "hero-title": "അരി പാടം രോഗ തിരിച്ചറിയൽ",
+      "hero-subtitle": "നിങ്ങളുടെ അരി ഇലയുടെ ചിത്രം അല്ലെങ്കിൽ വീഡിയോ അപ്‌ലോഡ് ചെയ്ത് AI-ശക്തമായ വിശകലനം ഉപയോഗിച്ച് തൽക്ഷണം രോഗങ്ങൾ കണ്ടെത്തുക",
+      "upload-image-title": "അരി ഇലയുടെ ചിത്രം അപ്‌ലോഡ് ചെയ്യുക",
+      "upload-image-desc": "രോഗ തിരിച്ചറിയലിനായി അരി ഇലയുടെ വ്യക്തമായ ചിത്രം അപ്‌ലോഡ് ചെയ്യുക",
+      "upload-video-title": "അരി പാടത്തിന്റെ വീഡിയോ അപ്‌ലോഡ് ചെയ്യുക",
+      "upload-video-desc": "വിപുലമായ വിശകലനത്തിനായി അരി പാടത്തിന്റെ വീഡിയോ അപ്‌ലോഡ് ചെയ്യുക",
+      "diagnose-image": "ചിത്രം രോഗനിർണയം ചെയ്യുക",
+      "diagnose-video": "വീഡിയോ രോഗനിർണയം ചെയ്യുക",
+      "predicted-disease": "പ്രവചിച്ച രോഗം",
+      "detected-diseases": "കണ്ടെത്തിയ രോഗങ്ങൾ",
+      "explanation": "വിശദീകരണം",
+      "water": "വെള്ളം",
+      "fertilizer": "വളം",
+      "medicine": "മരുന്ന്",
+      "organic-medicine": "ജൈവ മരുന്ന്",
+      "prevention": "തടയൽ",
+      "uploaded-image": "അപ്‌ലോഡ് ചെയ്ത ചിത്രം",
+      "uploaded-frame": "അപ്‌ലോഡ് ചെയ്ത വീഡിയോ ഫ്രെയിം",
+      "contact": "ബന്ധപ്പെടുക",
+      "contact-us": "ഞങ്ങളെ ബന്ധപ്പെടുക",
+      "send-message": "സന്ദേശം അയയ്ക്കുക",
+      "built-for": "ഉപയോഗിച്ച് നിർമ്മിച്ചത്",
+      "for-farmers": "കർഷകർക്കായി",
+      "powered-by": "TDA TECHNOLOGY നൽകുന്ന ശക്തി",
+      "chatbot-tooltip": "കൂടുതൽ സഹായം വേണോ? എന്നോട് എന്തും ചോദിക്കുക!",
+      "chatbot-speech": "കൂടുതൽ വിവരങ്ങൾ വേണമോ? ചോദിക്കാൻ ഒട്ടും സംശയിക്കേണ്ട! 😊",
+      "buy": "വാങ്ങുക"
+    },
+    te: {
+      "app-name": "వరి వ్యాధి గుర్తింపు",
+      "hero-title": "వరి పంట వ్యాధి గుర్తింపు",
+      "hero-subtitle": "మీ వరి ఆకు ఇమేజ్ లేదా వీడియోను అప్‌లోడ్ చేసి, AI-ఆధారిత విశ్లేషణతో తక్షణమే వ్యాధులను గుర్తించండి",
+      "upload-image-title": "వరి ఆకు ఇమేజ్ అప్‌లోడ్ చేయండి",
+      "upload-image-desc": "వ్యాధి గుర్తింపు కోసం వరి ఆకు యొక్క స్పష్టమైన ఇమేజ్ ను అప్‌లోడ్ చేయండి",
+      "upload-video-title": "వరి పొలం వీడియో అప్‌లోడ్ చేయండి",
+      "upload-video-desc": "విస్తృత విశ్లేషణ కోసం వరి పొలం వీడియోను అప్‌లోడ్ చేయండి",
+      "diagnose-image": "ఇమేజ్ ను రోగనిర్ధారణ చేయండి",
+      "diagnose-video": "వీడియోను రోగనిర్ధారణ చేయండి",
+      "predicted-disease": "అంచనా వేసిన వ్యాధి",
+      "detected-diseases": "గుర్తించబడిన వ్యాధులు",
+      "explanation": "వివరణ",
+      "water": "నీరు",
+      "fertilizer": "ఎరువు",
+      "medicine": "మందు",
+      "organic-medicine": "సేంద్రియ మందు",
+      "prevention": "నివారణ",
+      "uploaded-image": "అప్‌లోడ్ చేసిన ఇమేజ్",
+      "uploaded-frame": "అప్‌లోడ్ చేసిన వీడియో ఫ్రేమ్",
+      "contact": "సంప్రదించండి",
+      "contact-us": "మమ్మల్ని సంప్రదించండి",
+      "send-message": "సందేశం పంపండి",
+      "built-for": "తో నిర్మించబడింది",
+      "for-farmers": "రైతుల కోసం",
+      "powered-by": "TDA TECHNOLOGY ద్వారా సమర్థించబడింది",
+      "chatbot-tooltip": "మరింత సహాయం కావాలా? నన్ను ఏదైనా అడగండి!",
+      "chatbot-speech": "మీకు మరింత సమాచారం కావాలా? అడగడానికి సంకోచించకండి! 😊",
+      "buy": "కొనండి"
+    },
+    kn: {
+      "app-name": "ಭತ್ತ ರೋಗ ಗುರುತಿಸುವಿಕೆ",
+      "hero-title": "ಭತ್ತ ಬೆಳೆ ರೋಗ ಗುರುತಿಸುವಿಕೆ",
+      "hero-subtitle": "ನಿಮ್ಮ ಭತ್ತ ಎಲೆಯ ಚಿತ್ರ ಅಥವಾ ವೀಡಿಯೊವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ಮತ್ತು AI-ಚಾಲಿತ ವಿಶ್ಲೇಷಣೆಯೊಂದಿಗೆ ತಕ್ಷಣ ರೋಗಗಳನ್ನು ಪತ್ತೆ ಮಾಡಿ",
+      "upload-image-title": "ಭತ್ತ ಎಲೆಯ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+      "upload-image-desc": "ರೋಗ ಗುರುತಿಸುವಿಕೆಗಾಗಿ ಭತ್ತ ಎಲೆಯ ಸ್ಪಷ್ಟ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+      "upload-video-title": "ಭತ್ತ ಹೊಲ ವೀಡಿಯೊ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+      "upload-video-desc": "ವ್ಯಾಪಕ ವಿಶ್ಲೇಷಣೆಗಾಗಿ ಭತ್ತ ಹೊಲದ ವೀಡಿಯೊವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+      "diagnose-image": "ಚಿತ್ರವನ್ನು ರೋಗನಿರ್ಣಯ ಮಾಡಿ",
+      "diagnose-video": "ವೀಡಿಯೊವನ್ನು ರೋಗನಿರ್ಣಯ ಮಾಡಿ",
+      "predicted-disease": "ಊಹಿಸಲಾದ ರೋಗ",
+      "detected-diseases": "ಗುರುತಿಸಲಾದ ರೋಗಗಳು",
+      "explanation": "ವಿವರಣೆ",
+      "water": "ನೀರು",
+      "fertilizer": "ಎರುವು",
+      "medicine": "ಮದ್ದು",
+      "organic-medicine": "ಸಾವಯವ ಮದ್ದು",
+      "prevention": "ತಡೆಗಟ್ಟುವಿಕೆ",
+      "uploaded-image": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ಚಿತ್ರ",
+      "uploaded-frame": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ವೀಡಿಯೊ ಫ್ರೇಮ್",
+      "contact": "ಸಂಪರ್ಕಿಸಿ",
+      "contact-us": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+      "send-message": "ಸಂದೇಶ ಕಳುಹಿಸಿ",
+      "built-for": "ಜೊತೆಗೆ ನಿರ್ಮಿಸಲಾಗಿದೆ",
+      "for-farmers": "ರೈತರಿಗಾಗಿ",
+      "powered-by": "TDA TECHNOLOGY ನಿಂದ ಶಕ್ತಿ ಪಡೆದಿದೆ",
+      "chatbot-tooltip": "ಹೆಚ್ಚಿನ ಸಹಾಯ ಬೇಕೇ? ನನ್ನನ್ನು ಏನಾದರೂ ಕೇಳಿ!",
+      "chatbot-speech": "ನಿಮಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಬೇಕೇ? ಕೇಳಲು ಹಿಂಜರಿಯಬೇಡಿ! 😊",
+      "buy": "ಖರೀದಿಸಿ"
+    },
     ur: {
-  "app-name": "ناریل بیماری کی شناخت",
-  "hero-title": "ناریل کے درخت کی بیماری کی شناخت",
-  "hero-subtitle": "اپنی ناریل کے پتے کی تصویر یا ویڈیو اپ لوڈ کریں اور AI-چلائے جانے والے تجزیے کے ساتھ فوری طور پر بیماریوں کا پتہ لگائیں",
-  "upload-image-title": "پتے کی تصویر اپ لوڈ کریں",
-  "upload-image-desc": "بیماری کی شناخت کے لیے ناریل کے پتے کی واضح تصویر اپ لوڈ کریں",
-  "upload-video-title": "پتے کی ویڈیو اپ لوڈ کریں",
-  "upload-video-desc": "وسیع تجزیہ کے لیے ناریل کے پتوں کی ویڈیو اپ لوڈ کریں",
-  "diagnose-image": "تصویر کی تشخیص کریں",
-  "diagnose-video": "ویڈیو کی تشخیص کریں",
-  "predicted-disease": "متوقع بیماری",
-  "detected-diseases": "پائی گئی بیماریاں",
-  "explanation": "وضاحت",
-  "water": "پانی",
-  "fertilizer": "کھاد",
-  "medicine": "دوا",
-  "organic-medicine": "نامیاتی دوا",
-  "prevention": "روک تھام",
-  "uploaded-image": "اپ لوڈ کی گئی تصویر",
-  "uploaded-frame": "اپ لوڈ کیا گیا ویڈیو فریم",
-  "contact": "رابطہ کریں",
-  "contact-us": "ہم سے رابطہ کریں",
-  "send-message": "پیغام بھیجیں",
-  "built-for": "کے ساتھ بنایا گیا",
-  "for-farmers": "کسانوں کے لیے",
-  "powered-by": "TDA TECHNOLOGY کے ذریعہ طاقت ور",
-  "chatbot-tooltip": "مزید مدد چاہیے؟ مجھ سے کچھ بھی پوچھیں!",
-  "chatbot-speech": "آپ مزید معلومات چاہتے ہیں؟ پوچھنے میں ہچکچاہٹ محسوس نہ کریں! 😊"
-}
+      "app-name": "چاول کی بیماری کی شناخت",
+      "hero-title": "چاول کی فصل کی بیماری کی شناخت",
+      "hero-subtitle": "اپنی چاول کے پتے کی تصویر یا ویڈیو اپ لوڈ کریں اور AI-چلائے جانے والے تجزیے کے ساتھ فوری طور پر بیماریوں کا پتہ لگائیں",
+      "upload-image-title": "چاول کے پتے کی تصویر اپ لوڈ کریں",
+      "upload-image-desc": "بیماری کی شناخت کے لیے چاول کے پتے کی واضح تصویر اپ لوڈ کریں",
+      "upload-video-title": "چاول کے کھیت کی ویڈیو اپ لوڈ کریں",
+      "upload-video-desc": "وسیع تجزیہ کے لیے چاول کے کھیت کی ویڈیو اپ لوڈ کریں",
+      "diagnose-image": "تصویر کی تشخیص کریں",
+      "diagnose-video": "ویڈیو کی تشخیص کریں",
+      "predicted-disease": "متوقع بیماری",
+      "detected-diseases": "پائی گئی بیماریاں",
+      "explanation": "وضاحت",
+      "water": "پانی",
+      "fertilizer": "کھاد",
+      "medicine": "دوا",
+      "organic-medicine": "نامیاتی دوا",
+      "prevention": "روک تھام",
+      "uploaded-image": "اپ لوڈ کی گئی تصویر",
+      "uploaded-frame": "اپ لوڈ کیا گیا ویڈیو فریم",
+      "contact": "رابطہ کریں",
+      "contact-us": "ہم سے رابطہ کریں",
+      "send-message": "پیغام بھیجیں",
+      "built-for": "کے ساتھ بنایا گیا",
+      "for-farmers": "کسانوں کے لیے",
+      "powered-by": "TDA TECHNOLOGY کے ذریعہ طاقت ور",
+      "chatbot-tooltip": "مزید مدد چاہیے؟ مجھ سے کچھ بھی پوچھیں!",
+      "chatbot-speech": "آپ مزید معلومات چاہتے ہیں؟ پوچھنے میں ہچکچاہٹ محسوس نہ کریں! 😊",
+      "buy": "خریدیں"
+    }
   };
 
   // Current language (default to English)
@@ -1523,6 +1834,13 @@
   const languageOptions = document.querySelectorAll('.language-option');
   const languageTabs = document.querySelectorAll('.language-tab');
 
+  // Function to search for medicine on BigHaat
+  function searchMedicine(medicineName) {
+    // Navigate to BigHaat homepage - user can search for medicine there
+    const bigHaatUrl = "https://www.bighaat.com/";
+    window.open(bigHaatUrl, '_blank');
+    
+  }
   // Initialize language on page load
   document.addEventListener('DOMContentLoaded', function() {
     // Set current language
